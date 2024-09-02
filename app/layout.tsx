@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex font-sans text-slate bg-primary">
         <LeftSidebar />
-        <main className="max-w-7xl w-full mx-auto  px-6 md:px-16 lg:px-32 border-2 border-green">
+        <main className="max-w-7xl w-full mx-auto  px-6 md:px-16 lg:px-32 ">
           {children}
           <Footer />
         </main>

@@ -42,7 +42,7 @@ const ArchiveList = () => {
 
 const ArchiveItem = ({ title, live, code, techstacks }) => {
   return (
-    <tr className="grid grid-cols-12 [&>*]:p-2.5 gap-4 items-center hover:bg-primary-200">
+    <tr className="grid grid-cols-12 [&>*]:p-2.5 gap-4 items-center hover:bg-primary-200 border-b border-b-primary-300">
       <td className="text-green col-span-3 lg:col-span-1">2022</td>
       <td className="col-span-6 pr-5 text-slate-200 font-bold font-sans text-xl leading-6 lg:col-span-5">
         {title}
