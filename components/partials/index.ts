@@ -1,0 +1,9 @@
+export { LeftSidebar } from "./LeftSidebar";
+export { RightSidebar } from "./RightSidebar";
+export { About } from "./About";
+export { Header } from "./Header";
+export { Experience } from "./Experience";
+export { NoteWorthyProjects } from "./NoteWortyProject";
+export { Footer } from "./Footer";
+export { Contact } from "./Contact";
+export { Projects } from "./Projects";

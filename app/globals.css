@@ -2,32 +2,196 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@media (prefers-color-scheme: dark) {
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  @font-face {
+    font-family: "Calibre";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Calibre/Calibre-Regular.woff2) format("woff2");
+    src: url(/fonts/Calibre/Calibre-Regular.woff) format("woff");
+    src: url(/fonts/Calibre/Calibre-Regular.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Calibre";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/Calibre/Calibre-RegularItalic.woff2) format("woff2");
+    src: url(/fonts/Calibre/Calibre-RegularItalic.woff) format("woff");
+    src: url(/fonts/Calibre/Calibre-RegularItalic.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Calibre";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/fonts/Calibre/Calibre-Light.ttf) format("woff2");
+    src: url(/fonts/Calibre/Calibre-Light.woff) format("woff");
+    src: url(/fonts/Calibre/Calibre-Light.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Calibre";
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/fonts/Calibre/Calibre-LightItalic.woff2) format("woff2");
+    src: url(/fonts/Calibre/Calibre-LightItalic.woff) format("woff");
+    src: url(/fonts/Calibre/Calibre-LightItalic.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Calibre";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/Calibre/Calibre-Medium.woff2) format("woff2");
+    src: url(/fonts/Calibre/Calibre-Medium.woff) format("woff");
+    src: url(/fonts/Calibre/Calibre-Medium.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Calibre";
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/Calibre/Calibre-MediumItalic.woff2) format("woff2");
+    src: url(/fonts/Calibre/Calibre-MediumItalic.woff) format("woff");
+    src: url(/fonts/Calibre/Calibre-MediumItalic.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Calibre";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/fonts/Calibre/Calibre-Semibold.woff2) format("woff2");
+    src: url(/fonts/Calibre/Calibre-Semibold.woff) format("woff");
+    src: url(/fonts/Calibre/Calibre-Semibold.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Calibre";
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/fonts/Calibre/Calibre-SemiboldItalic.woff2) format("woff2");
+    src: url(/fonts/Calibre/Calibre-SemiboldItalic.woff) format("woff");
+    src: url(/fonts/Calibre/Calibre-SemiboldItalic.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "SF Mono";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/SFMono/SFMono-Regular.woff2) format("woff2");
+    src: url(/fonts/SFMono/SFMono-Regular.woff) format("woff");
+    src: url(/fonts/SFMono/SFMono-Regular.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "SF Mono";
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/SFMono/SFMono-RegularItalic.woff) format("woff");
+    src: url(/fonts/SFMono/SFMono-RegularItalic.woff2) format("woff2");
+    src: url(/fonts/SFMono/SFMono-RegularItalic.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "SF Mono";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/SFMono/SFMono-Medium.ttf) format("truetype");
+    src: url(/fonts/SFMono/SFMono-Medium.woff) format("woff");
+    src: url(/fonts/SFMono/SFMono-Medium.woff2) format("woff2");
+  }
+
+  @font-face {
+    font-family: "SF Mono";
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/SFMono/SFMono-MediumItalic.woff2) format("woff2");
+    src: url(/fonts/SFMono/SFMono-MediumItalic.woff) format("woff");
+    src: url(/fonts/SFMono/SFMono-MediumItalic.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "SF Mono";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/fonts/SFMono/SFMono-Semibold.woff2) format("woff2");
+    src: url(/fonts/SFMono/SFMono-Semibold.woff) format("woff");
+    src: url(/fonts/SFMono/SFMono-Semibold.ttf) format("truetype");
+  }
+
+  h1 {
+  }
+  h2 {
+    @apply text-slate-200 font-bold text-2xl md:text-3xl leading-[1.1];
+  }
+  h3 {
+    @apply font-semibold text-slate-200 text-2xl;
+  }
+  h4 {
+  }
+  main {
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer utilities {
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  .sidebar__email::after {
+    @apply bg-slate-300;
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 100px;
+    height: 2px;
+    transform: translate(100%, -50%);
+    margin-right: -24px;
+  }
+
+  .btn {
+    @apply inline-block px-7 py-5 border border-green text-green bg-transparent rounded-md text-sm font-mono leading-4;
+  }
+
+  .head-numbering {
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .head-numbering::before {
+    @apply mr-1 md:mr-3 font-normal text-xl text-green font-mono bottom-1;
+    counter-increment: section 1;
+    content: "0" counter(section) ".";
+    position: relative;
+  }
+
+  .head-numbering::after {
+    @apply md:ml-5 bg-primary-200 relative;
+    content: "";
+    display: block;
+    width: 300px;
+    height: 1px;
+  }
+
+  @media (max-width: 760px) {
+    .head-numbering::after {
+      width: 150px;
+    }
   }
 }
