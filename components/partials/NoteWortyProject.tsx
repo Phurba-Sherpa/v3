@@ -19,7 +19,7 @@ export const NoteWorthyProjects = () => {
           view the archive{" "}
         </a>
       </div>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
         {renderableProjects.map((proj, index) => (
           <ProjectItem key={index} data={proj} />
         ))}

@@ -1,55 +1,70 @@
-import React from "react";
-const recentSkillList = [
-  "Neovim",
-  "Next.js",
-  "tailwind css",
-  "TypeScript",
-  "GoLang",
-  "Advance CSS",
-];
+"use client";
+import React, { useState } from "react";
+import { EXP } from "@/data/experience";
 
 export const Experience = () => {
+  const [tabIndex, setTabIndex] = useState(0);
   return (
     <section className="py-16 md:py-24 lg:w-[90%] mx-auto" id="work">
       <h2 className="head-numbering">Where I've Worked</h2>
-      <p className="text-xl mb-4 max-w-[65ch]">
-        Hello! I am Phurba Sherpa, a React Developer based in Pokhara, Nepal. I
-        building the Front-end of Websites and Web Applications that leads to
-        the success of the overall product.
-      </p>
-      <p className="text-xl mb-4 max-w-[65ch]">
-        I have serious passion for UI effects, animations and creating
-        intuitive, dynamic user experiences. I also like sharing content related
-        to the stuff that I have learned over the years in Web Development so it
-        can help other people of the Dev Community.
-      </p>
-      <p className="text-xl mb-4 max-w-[65ch]">
-        I'm open to Job opportunities where I can contribute, learn and grow. If
-        you have a good opportunity that matches my skills and experience then
-        don't hesitate to contact me.
-      </p>
-      <p className="mb-5 text-xl">
-        Below are a few technologies I've had worked so far:
-      </p>
-      <RecentSkillList />
+      <div className="flex flex-col md:flex-row">
+        <Tabs
+          tabs={["Wow Finstack", "IT Village"]}
+          onClickTab={(index) => setTabIndex(index)}
+          activeTabId={tabIndex}
+        />
+        <TabContent data={EXP.at(tabIndex)} />
+      </div>
     </section>
   );
 };
 
-const RecentSkillList = () => {
+const TabContent = ({ data }) => {
   return (
-    <ul className="grid grid-cols-2 gap-2 w-2/3 md:w-1/3">
-      {recentSkillList.map((skill, index) => (
-        <SkillItem key={index} skill={skill} />
-      ))}
-    </ul>
+    <div className="ml-5">
+      <h3>
+        <span>{data.role}</span>
+        <a className="text-green" href="#">
+          {data.company}
+        </a>
+      </h3>
+      <p className="mb-6 font-mono text-sm text-slate-300">{data.duration}</p>
+      <ul>
+        {data.tasks.map((task, key) => (
+          <li
+            className="max-w-[60ch] before:content-['▹'] before:absolute before:left-0 before:text-green relative mb-2.5 pl-7 text-lg"
+            key={key}
+          >
+            {task}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
-const SkillItem = ({ skill }: { skill: String }) => {
+const Tabs = ({ tabs, onClickTab, activeTabId }) => {
   return (
-    <li className="text-xs font-mono before:content-['▹'] before:absolute before:left-0 before:text-sm before:text-green before:leading-[12px] relative pl-5">
-      {skill}
-    </li>
+    <div className="md:w-44 border-b-2  md:border-l-2 border-b-primary-200 md:border-l-primary-200 md:border-b-transparent text-sm font-mono flex justify-center w-full md:block mb-7 md:mb-0">
+      {tabs.map((tab, key) => (
+        <TabItem
+          key={key}
+          tabLabel={tab}
+          isActive={key === activeTabId}
+          handleClick={() => onClickTab(key)}
+        />
+      ))}
+    </div>
+  );
+};
+
+const TabItem = ({ tabLabel, handleClick, isActive }) => {
+  return (
+    <button
+      className={`w-full text-left pl-4 py-4 hover:bg-primary-300 border-b-2 md:border-l-2 ${isActive ? "border-b-green md:border-l-green md:border-b-transparent bg-primary-300" : "border-b-transparent md:border-l-transparent"}`}
+      onClick={handleClick}
+    >
+      {tabLabel}
+    </button>
   );
 };
