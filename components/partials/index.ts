@@ -7,3 +7,4 @@ export { NoteWorthyProjects } from "./NoteWortyProject";
 export { Footer } from "./Footer";
 export { Contact } from "./Contact";
 export { Projects } from "./Projects";
+export { Nav } from "./Nav";
