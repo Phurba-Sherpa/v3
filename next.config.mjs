@@ -6,6 +6,8 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  output: "export",
+  basePath: "/v3",
 };
 
 export default nextConfig;
