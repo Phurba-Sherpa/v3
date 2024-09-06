@@ -13,7 +13,11 @@ export const Header = () => {
         Currently, developing and maintaining robust and user-friendly
         applications for the fintech industry at Wow Finstack Nepal.
       </p>
-      <a href="#" className="btn">
+      <a
+        href="mailto:phurba1404@gmail.com"
+        target="_blank"
+        className="btn"
+      >
         phurba1404@gmail.com
       </a>
     </section>

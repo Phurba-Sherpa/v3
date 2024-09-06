@@ -5,7 +5,7 @@ import { EXP } from "@/data/experience";
 export const Experience = () => {
   const [tabIndex, setTabIndex] = useState(0);
   return (
-    <section className="py-16 md:py-24 lg:w-[90%] mx-auto" id="work">
+    <section id="experience" className="py-16 md:py-24 lg:w-[90%] mx-auto">
       <h2 className="head-numbering">Where I've Worked</h2>
       <div className="flex flex-col md:flex-row">
         <Tabs

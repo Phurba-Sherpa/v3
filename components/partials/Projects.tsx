@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 
 export const Projects = () => {
   return (
-    <section className="py-16 md:py-24 lg:w-[90%] mx-auto">
+    <section id="work" className="py-16 md:py-24 lg:w-[90%] mx-auto">
       <h2 className="head-numbering">Some Things I’ve Built</h2>
       {projects.map(
         (

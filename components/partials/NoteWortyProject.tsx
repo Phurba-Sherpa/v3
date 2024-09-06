@@ -4,10 +4,10 @@ import { Icon } from "../ui/Icon";
 import { noteWorthyProjects } from "@/data/noteworthy-projects";
 
 export const NoteWorthyProjects = () => {
-  const [showMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(true);
 
   let renderableProjects = noteWorthyProjects.slice(0, 7);
-  if (showMore) {
+  if (!showMore) {
     renderableProjects = noteWorthyProjects;
   }
 
@@ -26,7 +26,7 @@ export const NoteWorthyProjects = () => {
       </ul>
       <div className="text-center">
         <button className="btn" onClick={() => setShowMore((prev) => !prev)}>
-          Show More
+          {showMore ? "Show More" : "Show Less"}
         </button>
       </div>
     </section>
