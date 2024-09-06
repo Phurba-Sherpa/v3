@@ -29,9 +29,9 @@ const ArchiveList = () => {
         {noteWorthyProjects.map((proj, key) => (
           <ArchiveItem
             key={key}
-            title={proj.title}
-            code={proj.github}
-            live={proj.live}
+            title={proj?.title}
+            code={proj?.github}
+            live={proj?.live}
             techstacks={proj?.techStack}
           />
         ))}
