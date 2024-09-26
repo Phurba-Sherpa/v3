@@ -1,3 +1,5 @@
+import Link from "../ui/Link";
+
 const recentSkillList = [
   "Neovim",
   "Next.js",
@@ -13,14 +15,19 @@ export const About = () => {
       <h2 className="head-numbering title-about">About Me</h2>
       <p className="text-xl mb-4 max-w-[65ch]">
         Hello! I am Phurba Sherpa, a React Developer based in Pokhara, Nepal. I
-        building the Front-end of Websites and Web Applications that leads to
-        the success of the overall product.
+        build the Front-end of Websites and Web Applications that leads to the
+        success of the overall product.
       </p>
       <p className="text-xl mb-4 max-w-[65ch]">
-        I have serious passion for UI effects, animations and creating
-        intuitive, dynamic user experiences. I also like sharing content related
-        to the stuff that I have learned over the years in Web Development so it
-        can help other people of the Dev Community.
+        <span className="mr-1">
+          Fast-forward to today, and I’ve had the privilege of working at a
+        </span>
+        <Link url="#" label="Wealth Management" />
+        <span>
+          compnay, I also like sharing content related to the stuff that I have
+          learned over the years in Web Development so it can help other people
+          of the Dev Community.
+        </span>
       </p>
       <p className="text-xl mb-4 max-w-[65ch]">
         I'm open to Job opportunities where I can contribute, learn and grow. If

@@ -1,13 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import { EXP } from "@/data/experience";
+import Link from "../ui/Link";
 
 export const Experience = () => {
   const [tabIndex, setTabIndex] = useState(0);
   return (
     <section id="experience" className="py-16 md:py-24 lg:w-[90%] mx-auto">
       <h2 className="head-numbering title-work">Where I've Worked</h2>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row items-start">
         <Tabs
           tabs={["Wow Finstack", "IT Village"]}
           onClickTab={(index) => setTabIndex(index)}
@@ -23,10 +24,8 @@ const TabContent = ({ data }) => {
   return (
     <div className="ml-5">
       <h3>
-        <span>{data.role}</span>
-        <a className="text-green" href="#">
-          {data.company}
-        </a>
+        <span className="font-semibold mr-3">{data.role}</span>
+        <Link url={data.website} label={`@ ${data.company}`} />
       </h3>
       <p className="mb-6 font-mono text-sm text-slate-300">{data.duration}</p>
       <ul>

@@ -170,7 +170,12 @@
   }
 
   .btn {
-    @apply inline-block px-7 py-5 border border-green text-green bg-transparent rounded-md text-sm font-mono leading-4;
+    @apply inline-block px-8 py-3 border border-green text-green bg-transparent rounded-md text-sm font-mono leading-4 transition-all duration-300;
+    box-shadow: 0px 0px 0 #64ffda;
+  }
+  .btn:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 0 #64ffda;
   }
 
   .head-numbering {

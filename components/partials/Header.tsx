@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "../ui/Link";
+const CURRENT_COMPANY = "https://www.kairoswealth.com/";
 
 export const Header = () => {
   return (
@@ -9,14 +11,17 @@ export const Header = () => {
         I build things for the web.
       </h3>
       <p className="max-w-[60ch] mb-12 text-xl">
-        For over 2 years I've had experience with software development.
-        Currently, developing and maintaining robust and user-friendly
-        applications for the fintech industry at Wow Finstack Nepal.
+        <span className="mr-1">
+          For over 2 years I've had experience with software development.
+          Currently, developing and maintaining robust and user-friendly
+          applications for the AI based wealth management company
+        </span>
+        <Link url={CURRENT_COMPANY} label="Kairos Wealth" />
       </p>
       <a
         href="mailto:phurba1404@gmail.com"
         target="_blank"
-        className="btn"
+        className="btn py-4"
       >
         phurba1404@gmail.com
       </a>

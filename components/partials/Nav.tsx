@@ -54,7 +54,7 @@ export const Nav = () => {
 
 const NavItem = ({ label, link }) => {
   return (
-    <li className="nav-link font-mono text-slate-200">
+    <li className="nav-link font-mono text-slate-200 hover:text-green transition">
       <a href={link}>{label}</a>
     </li>
   );
