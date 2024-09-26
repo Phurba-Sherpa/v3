@@ -29,7 +29,7 @@ export const Projects = () => {
 
 const ProjectItem = ({ contentRight, img, ...props }) => {
   return (
-    <div className="grid grid-cols-12 gap-x-2 mb-12 md:mb-24 ">
+    <div className="grid grid-cols-12 gap-x-2 mb-12 md:mb-24">
       <ProjImage contentRight={contentRight} img={img} />
       <ProjectContent contentRight={contentRight} {...props} />
     </div>
@@ -62,7 +62,9 @@ const ProjectContent = ({
         featured project
       </p>
       <h3 className="mb-2.5">
-        <a href={live}>{title}</a>
+        <a href={live} className="hover:text-green transition" target="_blank">
+          {title}
+        </a>
       </h3>
       <p className="md:bg-primary-300 md:p-4 text-lg text-slate-300 py-5 rounded-sm bg-transparent">
         {desc}
@@ -77,18 +79,13 @@ const ProjectContent = ({
         ))}
       </ul>
       <div
-        className={`mt-2.5 flex items-center gap-x-3 ${contentRight ? " md:justify-end" : " "}`}
+        className={`mt-2.5 flex items-center text-slate-200 gap-x-3 ${contentRight ? " md:justify-end" : " "}`}
       >
-        <a href={code} className="">
-          <Icon width={24} height={24} icon="mdi:github" color="#8892b0" />
+        <a href={code} className="" target="_blank">
+          <Icon width={24} height={24} icon="mdi:github" />
         </a>
-        <a href={live}>
-          <Icon
-            width={24}
-            height={24}
-            icon="mdi:external-link"
-            color="#8892b0"
-          />
+        <a href={live} target="_blank">
+          <Icon width={24} height={24} icon="mdi:external-link" />
         </a>
       </div>
     </div>

@@ -35,7 +35,7 @@ export const NoteWorthyProjects = () => {
 
 const ProjectItem = ({ data }) => {
   return (
-    <div className="px-7 py-8 rounded-md bg-primary-300 flex flex-col">
+    <div className="px-7 py-8 rounded-md bg-primary-300 flex flex-col hover:-translate-y-1 transition-all duration-200 ease-in">
       <div className="mb-9 flex items-center gap-x-3">
         <a href={data.github}>
           <Icon
@@ -45,14 +45,14 @@ const ProjectItem = ({ data }) => {
             icon="mdi:folder-outline"
           />
         </a>
-        <a href={data.github} className="ml-auto">
+        <a href={data.github} className="ml-auto" target="_blank">
           <Icon width={22} height={22} icon="mdi:github" />
         </a>
-        <a href={data.live}>
+        <a href={data.live} target="_blank">
           <Icon icon="mdi:external-link" width={22} height={22} />
         </a>
       </div>
-      <h3 className="mb-2.5">{data.title}</h3>
+      <h3 className="mb-2.5 hover:text-green">{data.title}</h3>
       <p className="text-lg leading-6 mb-5">{data.desc}</p>
       <ul className="flex gap-x-4 font-mono mt-auto">
         {data.techStack.map((stack, index) => (

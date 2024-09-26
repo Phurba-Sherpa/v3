@@ -8,6 +8,17 @@ type IExp = {
 //www.kairoswealth.com/
 export const EXP: IExp[] = [
   {
+    company: "Kairos Wealth",
+    website: "https://www.kairoswealth.com/",
+    role: "Mid. Frontend Developer",
+    duration: "October 2024 - Present",
+    tasks: [
+      "Revamping the UI to give more modern and consistent look",
+      "Refactoring code, making it more performant",
+      "Organizing the code structure to make it easy to maintain in future",
+    ],
+  },
+  {
     company: "Wow Finstack",
     website: "https://www.wowfinstack.com/",
     role: "React Developer",

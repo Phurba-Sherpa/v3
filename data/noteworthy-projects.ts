@@ -19,8 +19,8 @@ export const noteWorthyProjects = [
     title: "Personal Website - v2",
     desc: "Complte responsive website built using tailwind css and next js. Taildwind is love btw",
     techStack: ["Nextjs", "tailwindcss"],
-    github: "https://github.com/phurba-sherpa/v2",
-    live: "v2.phurbasherpa.name.np",
+    github: "https://github.com/phurba-sherpa/v3",
+    live: "#",
   },
   {
     title: "Personal Website - v1",
