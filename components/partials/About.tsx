@@ -10,7 +10,7 @@ const recentSkillList = [
 export const About = () => {
   return (
     <section id="about" className="py-16 md:py-24 lg:w-[90%] mx-auto">
-      <h2 className="head-numbering">About Me</h2>
+      <h2 className="head-numbering title-about">About Me</h2>
       <p className="text-xl mb-4 max-w-[65ch]">
         Hello! I am Phurba Sherpa, a React Developer based in Pokhara, Nepal. I
         building the Front-end of Websites and Web Applications that leads to

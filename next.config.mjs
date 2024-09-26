@@ -7,7 +7,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   output: "export",
-  basePath: "/v3",
+  basePath: "",
 };
 
 export default nextConfig;

@@ -6,7 +6,7 @@ export const Experience = () => {
   const [tabIndex, setTabIndex] = useState(0);
   return (
     <section id="experience" className="py-16 md:py-24 lg:w-[90%] mx-auto">
-      <h2 className="head-numbering">Where I've Worked</h2>
+      <h2 className="head-numbering title-work">Where I've Worked</h2>
       <div className="flex flex-col md:flex-row">
         <Tabs
           tabs={["Wow Finstack", "IT Village"]}

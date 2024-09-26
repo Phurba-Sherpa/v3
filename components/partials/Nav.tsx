@@ -54,7 +54,7 @@ export const Nav = () => {
 
 const NavItem = ({ label, link }) => {
   return (
-    <li className="before:content-['01.'] before:text-green font-mono text-slate-200 before:mr-1">
+    <li className="nav-link font-mono text-slate-200">
       <a href={link}>{label}</a>
     </li>
   );

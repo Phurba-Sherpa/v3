@@ -5,7 +5,7 @@ import { projects } from "@/data/projects";
 export const Projects = () => {
   return (
     <section id="work" className="py-16 md:py-24 lg:w-[90%] mx-auto">
-      <h2 className="head-numbering">Some Things I’ve Built</h2>
+      <h2 className="head-numbering title-project">Some Things I’ve Built</h2>
       {projects.map(
         (
           { imageUrl, techList, desc, title, codePreview, sitePreview },

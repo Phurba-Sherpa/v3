@@ -134,6 +134,10 @@
     src: url(/fonts/SFMono/SFMono-Semibold.ttf) format("truetype");
   }
 
+  :root {
+    counter-reset: link;
+  }
+
   h1 {
   }
   h2 {
@@ -144,7 +148,8 @@
   }
   h4 {
   }
-  main {
+  body {
+    counter-reset: head;
   }
 }
 
@@ -176,8 +181,8 @@
 
   .head-numbering::before {
     @apply mr-1 md:mr-3 font-normal text-xl text-green font-mono bottom-1;
-    counter-increment: section 1;
-    content: "0" counter(section) ".";
+    counter-increment: head;
+    content: "0" counter(head) ".";
     position: relative;
   }
 
@@ -187,6 +192,12 @@
     display: block;
     width: 300px;
     height: 1px;
+  }
+  .nav-link::before {
+    @apply text-green font-mono mr-1 text-xs;
+
+    counter-increment: link;
+    content: "0" counter(link) ".";
   }
 
   @media (max-width: 760px) {
