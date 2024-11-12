@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Footer, LeftSidebar, Nav } from "../components/partials";
 import { RightSidebar } from "../components/partials";
+
 export const metadata: Metadata = {
   title: "Phurba Sherpa",
   description: "A personal website",
