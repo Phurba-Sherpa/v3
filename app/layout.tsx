@@ -2,15 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Footer, LeftSidebar, Nav } from "../components/partials";
 import { RightSidebar } from "../components/partials";
-import v3 from "../public/img/v3.png";
 
 export const metadata: Metadata = {
   title: "Phurba Sherpa",
   description: "A personal website",
   openGraph: {
-    title: "Phurba Sherpa - Software Developer Blog",
+    title: "Phurba Sherpa - Software Developer",
     url: "http://phurbasherpaname.np",
     type: "website",
+    images: [
+      {
+        url: "http://phurbasherpaname.np/v3.png",
+        width: 600,
+        height: 300,
+        alt: "Phurba Sherpa's Personal Website",
+      },
+    ],
   },
 };
 
