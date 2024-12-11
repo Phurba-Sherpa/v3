@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "http://phurbasherpaname.np/v3.png",
+        url: "http://phurbasherpaname.np/img/v3.png",
         width: 600,
         height: 300,
         alt: "Phurba Sherpa's Personal Website",
