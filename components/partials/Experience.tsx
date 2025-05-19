@@ -10,7 +10,7 @@ export const Experience = () => {
       <h2 className="head-numbering title-work">Where I've Worked</h2>
       <div className="flex flex-col md:flex-row items-start">
         <Tabs
-          tabs={["Kairos Wealth", "Wow Finstack", "IT Village"]}
+          tabs={["Peakmetrics", "Kairos Wealth", "Wow Finstack", "IT Village"]}
           onClickTab={(index) => setTabIndex(index)}
           activeTabId={tabIndex}
         />

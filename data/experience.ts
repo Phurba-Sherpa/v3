@@ -5,13 +5,25 @@ type IExp = {
   tasks: string[];
   website: string;
 };
-//www.kairoswealth.com/
+
 export const EXP: IExp[] = [
+  {
+    company: "Peakmetrics",
+    website: "https://www.peakmetrics.com/",
+    role: "Mid. Frontend Developer",
+    duration: "March 2025 - Present",
+    tasks: [
+      "Revamping the UI to give more modern and consistent look",
+      "Delivered new features",
+      "Bug fixing, modifying UI as per the client feedback",
+      "Write re-usable components and storybook",
+    ],
+  },
   {
     company: "Kairos Wealth",
     website: "https://www.kairoswealth.com/",
     role: "Mid. Frontend Developer",
-    duration: "October 2024 - Present",
+    duration: "October 2024 - March 2025",
     tasks: [
       "Revamping the UI to give more modern and consistent look",
       "Refactoring code, making it more performant",
