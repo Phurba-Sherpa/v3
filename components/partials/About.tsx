@@ -1,12 +1,18 @@
 import Link from "../ui/Link";
 
 const recentSkillList = [
-  "Neovim",
+  "React.js",
   "Next.js",
-  "tailwind css",
   "TypeScript",
+  "tailwind css",
   "GoLang",
-  "Advance CSS",
+  "PostgreSQL",
+  "React Testing Library",
+  "Cypress",
+  "Storybook",
+  "GraphQL",
+  "Neovim",
+  "Prompt Engineering",
 ];
 
 export const About = () => {
@@ -44,7 +50,7 @@ export const About = () => {
 
 const RecentSkillList = () => {
   return (
-    <ul className="grid grid-cols-2 gap-2 w-2/3 md:w-1/3">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 w-2/3">
       {recentSkillList.map((skill, index) => (
         <SkillItem key={index} skill={skill} />
       ))}

@@ -1,0 +1,21 @@
+From 7eddfacb8a97bbb3aa5fbf57dbdb80e2645d7bbf Mon Sep 17 00:00:00 2001
+From: phurba-sherpa <phurba1404@gmail.com>
+Date: Tue, 31 Dec 2024 21:58:25 +0545
+Subject: [PATCH] chore: cleanup .gitignore
+
+---
+ .gitignore | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/.gitignore b/.gitignore
+index fd3dbb5..b836e4e 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1,4 +1,3 @@
+-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+ 
+ # dependencies
+ /node_modules
+-- 
+2.46.0.windows.1
+
