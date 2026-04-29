@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Phurba Sherpa — Portfolio Design System
+   Dark editorial · electric lime accent · serif display + mono details
+   All colors HSL. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    /* Dark by default — site is dark-only */
+    --background: 240 6% 5%;            /* #0A0A0B near-black */
+    --foreground: 40 20% 96%;           /* warm off-white */
+
+    --card: 240 6% 7%;
+    --card-foreground: 40 20% 96%;
+
+    --popover: 240 6% 7%;
+    --popover-foreground: 40 20% 96%;
+
+    --primary: 75 94% 70%;              /* electric lime #D9FB6A */
+    --primary-foreground: 240 10% 6%;
+
+    --secondary: 240 5% 12%;
+    --secondary-foreground: 40 20% 96%;
+
+    --muted: 240 5% 11%;
+    --muted-foreground: 240 5% 60%;
+
+    --accent: 75 94% 70%;
+    --accent-foreground: 240 10% 6%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 40 20% 96%;
+
+    --border: 240 5% 14%;
+    --input: 240 5% 14%;
+    --ring: 75 94% 70%;
+
+    --radius: 0.75rem;
+
+    /* Brand extras */
+    --accent-glow: 75 100% 75%;
+    --surface-elevated: 240 5% 9%;
+    --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, hsl(75 94% 70% / 0.18), transparent 70%);
+    --gradient-text: linear-gradient(180deg, hsl(40 20% 98%) 0%, hsl(40 10% 70%) 100%);
+    --shadow-glow: 0 0 80px -10px hsl(75 94% 70% / 0.45);
+    --shadow-card: 0 1px 0 0 hsl(0 0% 100% / 0.05) inset, 0 20px 40px -20px hsl(0 0% 0% / 0.6);
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+    background-image:
+      radial-gradient(ellipse 90% 50% at 50% -10%, hsl(75 94% 70% / 0.08), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 100% 100%, hsl(280 80% 60% / 0.05), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .font-serif { font-family: 'Instrument Serif', serif; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 40px hsl(var(--primary) / 0.4);
+  }
+
+  .grain::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  .hover-lift {
+    transition: transform 0.4s var(--transition-smooth), border-color 0.4s var(--transition-smooth);
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    border-color: hsl(var(--primary) / 0.5);
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.05); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@layer utilities {
+  /* Reveal: starts hidden, fades up when .is-visible is added */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s var(--transition-smooth), transform 0.9s var(--transition-smooth);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Subtle shimmer over the lime accent text */
+  .accent-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--accent-glow)) 45%,
+      hsl(var(--primary)) 90%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+
+  .drift {
+    animation: drift 6s ease-in-out infinite;
+  }
+
+  /* Underline grow on hover */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background: hsl(var(--primary));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s var(--transition-smooth);
+  }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .accent-shimmer { animation: none; }
+    .drift { animation: none; }
+    .marquee { animation: none; }
+  }
+}
