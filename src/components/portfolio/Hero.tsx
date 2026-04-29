@@ -1,7 +1,7 @@
 import { ArrowDownRight, Download, FileText } from "lucide-react";
 
-// TODO: replace with your Google Doc ID
-const RESUME_DOC_ID = "REPLACE_WITH_YOUR_DOC_ID";
+const RESUME_DOC_ID = "1RhSYB45D3RgmFeJVRMZBaYDlWBBFcpGaaOl-Bm1wpPw";
+
 const RESUME_VIEW_URL = `https://docs.google.com/document/d/${RESUME_DOC_ID}/preview`;
 const RESUME_PDF_URL = `https://docs.google.com/document/d/${RESUME_DOC_ID}/export?format=pdf`;
 
