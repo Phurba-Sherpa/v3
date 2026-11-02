@@ -6,8 +6,6 @@
    Dark editorial · electric lime accent · serif display + mono details
    All colors HSL. */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
-
 @layer base {
   :root {
     /* Dark by default — site is dark-only */
@@ -43,21 +41,12 @@
 
     /* Brand extras */
     --accent-glow: 75 100% 75%;
-    --surface-elevated: 240 5% 9%;
-    --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, hsl(75 94% 70% / 0.18), transparent 70%);
+    --surface-elevated: 240 5% 8.5%;
+    --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, hsl(75 94% 70% / 0.16), transparent 70%);
     --gradient-text: linear-gradient(180deg, hsl(40 20% 98%) 0%, hsl(40 10% 70%) 100%);
     --shadow-glow: 0 0 80px -10px hsl(75 94% 70% / 0.45);
     --shadow-card: 0 1px 0 0 hsl(0 0% 100% / 0.05) inset, 0 20px 40px -20px hsl(0 0% 0% / 0.6);
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -71,13 +60,10 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-background text-foreground antialiased font-sans;
     font-feature-settings: "ss01", "cv11";
     background-image:
-      radial-gradient(ellipse 90% 50% at 50% -10%, hsl(75 94% 70% / 0.08), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 100% 100%, hsl(280 80% 60% / 0.05), transparent 60%);
-    background-attachment: fixed;
+      radial-gradient(ellipse 90% 50% at 50% -10%, hsl(75 94% 70% / 0.07), transparent 60%);
   }
 
   ::selection {
@@ -87,7 +73,7 @@
 }
 
 @layer utilities {
-  .font-serif { font-family: 'Instrument Serif', serif; }
+  .font-serif { font-family: 'Instrument Serif', Georgia, serif; }
   .font-mono { font-family: 'JetBrains Mono', monospace; }
 
   .text-gradient {
@@ -98,7 +84,7 @@
   }
 
   .text-glow {
-    text-shadow: 0 0 40px hsl(var(--primary) / 0.4);
+    text-shadow: 0 0 40px hsl(var(--primary) / 0.38);
   }
 
   .grain::before {
@@ -106,21 +92,42 @@
     position: fixed;
     inset: 0;
     pointer-events: none;
-    opacity: 0.04;
+    opacity: 0.035;
     z-index: 1;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   .marquee {
-    animation: marquee 40s linear infinite;
+    animation: marquee 45s linear infinite;
   }
 
   .hover-lift {
-    transition: transform 0.4s var(--transition-smooth), border-color 0.4s var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform 0.45s var(--transition-smooth),
+      border-color 0.45s var(--transition-smooth),
+      background-color 0.45s var(--transition-smooth);
+  }
+  .hover-lift::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.45s var(--transition-smooth);
+    background: radial-gradient(
+      520px circle at var(--mouse-x, 50%) var(--mouse-y, 0%),
+      hsl(var(--primary) / 0.065),
+      transparent 45%
+    );
   }
   .hover-lift:hover {
-    transform: translateY(-4px);
-    border-color: hsl(var(--primary) / 0.5);
+    transform: translateY(-3px);
+    border-color: hsl(var(--primary) / 0.45);
+  }
+  .hover-lift:hover::before {
+    opacity: 1;
   }
 }
 
@@ -150,7 +157,6 @@
 }
 
 @layer utilities {
-  /* Reveal: starts hidden, fades up when .is-visible is added */
   .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -162,7 +168,6 @@
     transform: translateY(0);
   }
 
-  /* Subtle shimmer over the lime accent text */
   .accent-shimmer {
     background: linear-gradient(
       90deg,
@@ -181,7 +186,6 @@
     animation: drift 6s ease-in-out infinite;
   }
 
-  /* Underline grow on hover */
   .link-underline {
     position: relative;
   }
