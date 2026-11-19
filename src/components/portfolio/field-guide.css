@@ -18,6 +18,12 @@
 .guide-byline strong { font-weight: 600; }
 .survey-plate { margin: 0; }
 .survey-plate svg { width: 100%; height: auto; }
+.survey-loupe { display: none; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .survey-plate svg { cursor: crosshair; }
+  .survey-loupe[data-active] { display: inline; animation: loupe-focus 160ms ease-out both; }
+  @keyframes loupe-focus { from { opacity: 0; } to { opacity: 1; } }
+}
 .survey-plate figcaption { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid; padding-top: .7rem; }
 .guide-contents { border-top: 2px solid; display: grid; grid-template-columns: .85fr repeat(4,1fr); padding: 1rem 0 2.5rem; }
 .guide-contents h2 { align-self: start; gap: .5rem; margin-top: .25rem; }

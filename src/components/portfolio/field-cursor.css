@@ -1,0 +1,15 @@
+.field-cursor { display: none; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
+  .field-cursor[data-mode] {
+    display: block; position: fixed; inset: 0 auto auto 0; z-index: 60;
+    width: 0; height: 0; pointer-events: none; color: #ffad88;
+    transition: transform 85ms cubic-bezier(.2,.8,.2,1);
+  }
+  .field-cursor[data-surface="paper"] { color: #a93721; }
+  .field-cursor svg {
+    position: absolute; left: -14px; top: -14px;
+    transform: scale(.65) rotate(-7deg); opacity: .72;
+    transition: transform 180ms ease-out, opacity 180ms ease-out;
+  }
+  .field-cursor[data-mode="link"] svg { transform: scale(1.12) rotate(0); opacity: 1; }
+}
