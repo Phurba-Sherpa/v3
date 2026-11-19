@@ -149,9 +149,9 @@ export const Skills = () => {
         </div>
       </div>
 
-      <div className="mt-24 relative w-full overflow-hidden">
-        <div className="flex marquee whitespace-nowrap">
-          {[...marqueeWords, ...marqueeWords, ...marqueeWords].map((w, i) => (
+      <div aria-hidden="true" className="mt-24 relative w-full overflow-hidden">
+        <div className="flex w-max marquee whitespace-nowrap">
+          {[...marqueeWords, ...marqueeWords].map((w, i) => (
             <span
               key={i}
               className="font-serif italic text-7xl md:text-9xl text-muted-foreground/30 px-8 shrink-0"

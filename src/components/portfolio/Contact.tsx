@@ -41,13 +41,13 @@ export const Contact = () => {
           >
             <a
               href="mailto:phurba1404@gmail.com"
-              className="group flex items-center justify-between gap-4 p-6 rounded-2xl bg-primary text-primary-foreground hover:shadow-[var(--shadow-glow)] hover:-translate-y-1 transition-all duration-500"
+              className="group flex items-center justify-between gap-2 p-3 lg:gap-4 lg:p-6 rounded-2xl bg-primary text-primary-foreground hover:shadow-[var(--shadow-glow)] hover:-translate-y-1 transition-all duration-500"
             >
               <div>
                 <div className="font-mono text-[10px] uppercase tracking-widest opacity-70">
                   Email me
                 </div>
-                <div className="font-serif text-xl mt-1">phurba1404@gmail.com</div>
+                <div className="font-serif text-xl mt-1 [overflow-wrap:anywhere]">phurba1404@gmail.com</div>
               </div>
               <Mail className="w-6 h-6 transition-transform group-hover:rotate-12" />
             </a>

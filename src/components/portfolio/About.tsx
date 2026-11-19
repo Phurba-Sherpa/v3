@@ -139,9 +139,9 @@ export const About = () => {
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="bg-background p-8 hover-lift border border-transparent flex flex-col justify-between"
+                className="bg-background p-3 sm:p-5 lg:p-8 flex flex-col justify-between"
               >
-                <div className="font-serif text-5xl md:text-6xl text-primary mb-4 tabular-nums">
+                <div className="font-serif text-4xl lg:text-5xl text-primary mb-4 tabular-nums">
                   <AnimatedStatValue spec={s} active={grid.shown} />
                 </div>
                 <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground leading-relaxed">

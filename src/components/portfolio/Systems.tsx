@@ -56,8 +56,9 @@ const WorkRow = ({ item }: { item: SelectedWorkItem }) => {
 
   return (
     <article
+      id={`system-${item.index}`}
       ref={ref}
-      className={`group bg-background p-8 md:p-12 hover-lift border border-transparent reveal ${
+      className={`bg-background py-8 md:py-12 border-t border-border reveal ${
         shown ? "is-visible" : ""
       }`}
     >
@@ -72,13 +73,13 @@ const WorkRow = ({ item }: { item: SelectedWorkItem }) => {
         </div>
 
         <div className="md:col-span-8 space-y-4">
-          <h3 className="font-serif text-3xl md:text-4xl leading-tight transition-colors duration-500 group-hover:text-primary">
+          <h3 className="font-serif text-3xl md:text-4xl leading-tight break-words">
             {item.href ? (
               <a
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-3"
+                className="group inline-flex items-center gap-3 hover:text-primary"
               >
                 <span>{item.title}</span>
                 <ArrowUpRight className="w-6 h-6 text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -126,8 +127,7 @@ export const Systems = () => {
             heading.shown ? "is-visible" : ""
           }`}
         >
-          Systems built for <span className="italic text-primary">speed</span>,
-          precision &amp; scale.
+          Selected <span className="italic text-primary">work.</span>
         </h2>
 
         <div className="space-y-px bg-border">

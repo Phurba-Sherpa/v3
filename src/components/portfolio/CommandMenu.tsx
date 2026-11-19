@@ -55,7 +55,7 @@ export const CommandMenu = () => {
     setOpen(false);
     const el = document.querySelector(hash);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView();
     } else {
       window.location.hash = hash;
     }
@@ -91,7 +91,11 @@ export const CommandMenu = () => {
           No matching command or section found.
         </CommandEmpty>
 
-        <CommandGroup heading="Navigation">
+        <CommandGroup heading="Field guide / Contents">
+          <CommandItem onSelect={() => navigateTo("#top")} className="gap-3 cursor-pointer">
+            <span>Cover — Systems in practice</span>
+            <CommandShortcut className="font-mono">/ 00</CommandShortcut>
+          </CommandItem>
           <CommandItem onSelect={() => navigateTo("#about")} className="gap-3 cursor-pointer">
             <User className="w-4 h-4 text-primary" />
             <span>About & Impact Telemetry</span>

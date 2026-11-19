@@ -9,42 +9,42 @@
 @layer base {
   :root {
     /* Dark by default — site is dark-only */
-    --background: 240 6% 5%;            /* #0A0A0B near-black */
+    --background: 105 7% 12%;           /* field guide: ink */
     --foreground: 40 20% 96%;           /* warm off-white */
 
-    --card: 240 6% 7%;
+    --card: 105 7% 15%;
     --card-foreground: 40 20% 96%;
 
-    --popover: 240 6% 7%;
+    --popover: 105 7% 15%;
     --popover-foreground: 40 20% 96%;
 
-    --primary: 75 94% 70%;              /* electric lime #D9FB6A */
+    --primary: 18 90% 75%;             /* light vermilion on ink */
     --primary-foreground: 240 10% 6%;
 
     --secondary: 240 5% 12%;
     --secondary-foreground: 40 20% 96%;
 
     --muted: 240 5% 11%;
-    --muted-foreground: 240 5% 60%;
+    --muted-foreground: 42 12% 72%;
 
-    --accent: 75 94% 70%;
+    --accent: var(--primary);
     --accent-foreground: 240 10% 6%;
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 40 20% 96%;
 
-    --border: 240 5% 14%;
+    --border: 75 5% 28%;
     --input: 240 5% 14%;
-    --ring: 75 94% 70%;
+    --ring: var(--primary);
 
     --radius: 0.75rem;
 
     /* Brand extras */
-    --accent-glow: 75 100% 75%;
+    --accent-glow: 29 100% 82%;
     --surface-elevated: 240 5% 8.5%;
     --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, hsl(75 94% 70% / 0.16), transparent 70%);
     --gradient-text: linear-gradient(180deg, hsl(40 20% 98%) 0%, hsl(40 10% 70%) 100%);
-    --shadow-glow: 0 0 80px -10px hsl(75 94% 70% / 0.45);
+    --shadow-glow: 0 5px 24px -10px hsl(var(--primary) / 0.25);
     --shadow-card: 0 1px 0 0 hsl(0 0% 100% / 0.05) inset, 0 20px 40px -20px hsl(0 0% 0% / 0.6);
     --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -57,7 +57,11 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+    color-scheme: dark;
   }
+
+  :focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 4px; }
 
   body {
     @apply bg-background text-foreground antialiased font-sans;
@@ -207,6 +211,8 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
     .reveal { opacity: 1; transform: none; transition: none; }
     .accent-shimmer { animation: none; }
     .drift { animation: none; }
